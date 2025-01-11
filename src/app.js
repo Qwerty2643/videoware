@@ -1,7 +1,10 @@
 import express from "express";
 import cors from "cors"
+import cookieParser from "cookieParser"
+
 
 const app = express();
+
 
 app.use(
     cors({
@@ -21,6 +24,7 @@ app.use(express.urlencoded({          //parses url encoded data
 }))
 app.use(express.static("public"))       //serve static files like html,css that are present in the public dir
 
+app.use(cookieParser())
 // import routes
 import healthcheckRouter from './routes/healthcheck.routes.js'
 
