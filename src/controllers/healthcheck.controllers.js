@@ -7,8 +7,8 @@ const healthcheck = asyncHandler( async(req,res)=>{
      .json(new ApiResponse(200,"data:ok","Health check passed"))
 })
 
-
-
+// alternate:(without using asynchandler,uses normal try-catch)
+// 
 // const healthcheck =async (req,res,next) => { try {
 //     return res
 //         .status(200)
