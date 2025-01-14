@@ -23,6 +23,11 @@ app.use(express.urlencoded({          //parses url encoded data
     limit:"16kb"
 }))
 app.use(express.static("public"))       //serve static files like html,css that are present in the public dir
+app.use((req, res, next) => {
+    console.log("Incoming Request:", req.body);
+    next();
+});
+
 
 app.use(cookieParser())
 // import routes
